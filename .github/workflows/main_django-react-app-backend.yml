@@ -78,4 +78,6 @@ jobs:
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CAD6B9E2AC0B4E09A38D82523E91B906 }}
 
       - name: Run migrations 
-        run: python manage.py migrate
+        run: |
+          source venv/bin/activate
+          python manage.py migrate
