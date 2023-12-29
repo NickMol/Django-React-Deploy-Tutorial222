@@ -28,14 +28,12 @@ jobs:
           source venv/bin/activate
       
       - name: Install dependencies
-        run: | 
-          cd backend
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
       - name: Zip artifact for deployment
-        run: zip release.zip backend/* -r
+        run: zip release.zip ./* -r
 
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v3
@@ -68,4 +66,4 @@ jobs:
         with:
           app-name: 'django-react-app-backend'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_27FFF8B3B4EF4EA19C0EA59668072722 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_240E494FFF2F48D19C69CE0C0E6B2E2E }}
