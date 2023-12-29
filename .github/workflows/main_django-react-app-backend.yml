@@ -45,6 +45,12 @@ jobs:
           cd backend
           zip release.zip ./* -r
 
+          
+      - name: Run migrations 
+        run: |
+          cd backend
+          python manage.py migrate
+
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v3
         with:
@@ -76,10 +82,3 @@ jobs:
           app-name: 'django-react-app-backend'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CAD6B9E2AC0B4E09A38D82523E91B906 }}
-
-      - name: Run migrations 
-        run: |
-          source venv/bin/activate
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt 
-          python manage.py migrate
