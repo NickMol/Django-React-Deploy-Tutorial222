@@ -22,9 +22,6 @@ jobs:
         with:
           python-version: '3.8'
 
-      - name: Change directory to the backend folder
-        run: cd backend
-
       - name: Create and start virtual environment
         run: |
           python -m venv venv
