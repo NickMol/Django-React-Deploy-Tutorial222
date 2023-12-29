@@ -79,5 +79,6 @@ jobs:
 
       - name: Run migrations 
         run: |
+          cd backend  # Change to the correct directory
           source venv/bin/activate
           python manage.py migrate
