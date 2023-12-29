@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'api'
 ]
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
