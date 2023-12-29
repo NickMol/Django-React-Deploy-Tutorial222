@@ -37,7 +37,7 @@ jobs:
         run: | 
           cd backend 
           python manage.py collectstatic --noinput
-        
+
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
       - name: Zip artifact for deployment
@@ -45,11 +45,6 @@ jobs:
           cd backend
           zip release.zip ./* -r
 
-          
-      - name: Run migrations 
-        run: |
-          cd backend
-          python manage.py migrate
 
       - name: Upload artifact for deployment jobs
         uses: actions/upload-artifact@v3
