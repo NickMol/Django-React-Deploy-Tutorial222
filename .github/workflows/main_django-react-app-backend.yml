@@ -38,6 +38,10 @@ jobs:
           cd backend 
           python manage.py collectstatic --noinput
 
+      - name: Run migrations
+        run: | 
+          cd backend 
+          python manage.py migrate
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
       - name: Zip artifact for deployment
