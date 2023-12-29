@@ -76,3 +76,6 @@ jobs:
           app-name: 'django-react-app-backend'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CAD6B9E2AC0B4E09A38D82523E91B906 }}
+
+      - name: Run migrations 
+        run: python manage.py migrate
